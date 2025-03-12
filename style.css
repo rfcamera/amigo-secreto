@@ -8,7 +8,6 @@
     --color-white: #FFFFFF;
     --color-atention: #FF0000;
     --color-atention-hover: #870000;
-}
 
 /* Estilos gerais */
 * {
@@ -34,6 +33,8 @@ body {
 .main-content {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 100%;
 }
@@ -44,7 +45,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0 0;
+    /* superior | direita | inferior | esquerda */
+    padding: 20px 0px 20px 20px;
+    text-align: center;
+}
+
+.header-banner img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0; /* Espaço entre o título e a imagem */
 }
 
 /* Seção de entrada */
@@ -58,6 +68,8 @@ body {
     align-items: center;
     padding: 20px;
     width: 100%;
+    max-width: auto;
+    margin: 0 auto;
 }
 
 /* Títulos */
@@ -225,28 +237,47 @@ ul {
     animation: blink 1s infinite;
 }
 
+/* Responsividade */
 /* Estilos para dispositivos móveis */
 @media (max-width: 768px) {
+    .header-banner {
+        flex-direction: column;
+        padding: 20px 0 0;
+    }
     .main-title {
         font-size: 36px;
     }
     .section-title {
         font-size: 24px;
     }
+    .input-section {
+        margin: 0 auto;
+    }
     .input-title {
         font-size: 14px;
     }
-    button {
+    .button {
         font-size: 14px;
         padding: 10px 15px;
-        .button-add {
+    }
+    /* Removido o aninhamento inválido */
+    .button-add {
         padding: 10px 15px;
     }
-    .button-draw {
-        padding: 10px 20px;
+    .button-container {
+        display: flex;
+        flex-direction: column; /* Empilha os botões */
+        align-items: center;
+        gap: 10px;
     }
+    .button-draw,
     .button-clear {
+        flex: none;
         padding: 10px 20px;
+        font-size: 14px;
+        width: 80%;
+        max-width: 200px;
+        margin: 5px 0;
     }
 }
 }
