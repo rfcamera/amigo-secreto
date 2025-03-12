@@ -13,23 +13,35 @@ Amigo Secreto é uma aplicação web que permite aos usuários inserir nomes de 
 
 ## 🔨 Funcionalidades do projeto
 
-- **Adicionar nomes:**  
-  O usuário insere o nome de um amigo no campo de texto e clica no botão "Adicionar". Se o campo estiver vazio, um alerta informa: "Por favor, insira um nome." Do contrário, o nome digitado é adicionado a uma lista que fica visível na página, e o campo de texto é limpo para que o usuário possa inserir outro nome.
+- **Adicionar nomes:** 
+  O usuário insere o nome de um amigo no campo de texto e clica no botão "Adicionar" (ou pressiona a tecla Enter).  
+  - Se o campo estiver vazio, o sistema exibe o alerta "Por favor, insira um nome."
+  Do contrário, o nome digitado é adicionado a um vetor (array amigos) e exibido em uma lista na página.
+  Em seguida, o campo de texto é limpo para que o usuário possa inserir outro nome.
 
 - **Visualizar a lista de amigos:**  
-  Todos os nomes inseridos são exibidos em uma lista (através do elemento `<ul>` presente no código), permitindo que o usuário veja quais amigos já foram adicionados.
+  A lista de nomes inseridos é exibida dinamicamente.  
+  - Para cada amigo não sorteado, é exibido um botão "Remover" ao lado do nome, permitindo que o usuário exclua individualmente um amigo da lista.  
+  - Quando um amigo é sorteado, seu nome é exibido com a marcação " (Selecionado)" e o botão "Remover" é removido desse item permitindo que o usuário veja quais amigos já foram selecionados.
 
 - **Limpar lista de amigos:**
-  O usuário pode limpar a lista de amigos clicando no botão "Limpar Lista". Isso remove todos os nomes da lista e limpa o campo de texto para que o usuário possa inserir novos nomes.
+  O usuário pode limpar toda a lista de amigos clicando no botão "Limpar Lista". Isso remove todos os nomes da lista, limpa o campo de entrada e também o resultado do sorteio, permitindo que o usuário possa começar um novo sorteio.
 
 - **Sortear amigo:**
-  O usuário pode realizar o sorteio do amigo secreto clicando no botão "Sortear Amigo". Ao clicar no botão "Sortear Amigo", a aplicação seleciona aleatoriamente um dos nomes da lista e exibe o resultado na tela.
+  Ao clicar no botão "Sortear amigo", a aplicação realiza um sorteio aleatório de um dos nomes da lista e exibe o resultado na tela:
+  - Apenas os amigos que ainda não foram sorteados (não marcados como "Selecionado") são considerados.
+  - O amigo sorteado é marcado como selecionado, seu nome é exibido com a indicação " (Selecionado)" na lista e o resultado do sorteio é mostrado na tela.
+  - Se todos os amigos já tiverem sido sorteados, o botão "Sortear amigo" é desabilitado e o sistema exibe a mensagem "Todos os amigos já foram selecionados!".
+
+  - **Ação com a tecla Enter:**  
+  Ao digitar o nome no campo de entrada, o usuário pode pressionar a tecla <Enter> para acionar a função de adicionar amigo, sem precisar clicar no botão "Adicionar".
+
 
 ## 📷 Demonstração
 
 *Exemplo visual do funcionamento do Amigo Secreto:*
 
-![Funcionamento do Amigo Secreto](.assets/output1080.gif)
+![Funcionamento do Amigo Secreto](.assets/output1080_plus.gif)
 
 ## ✔️ Técnicas e tecnologias utilizadas
 
@@ -54,9 +66,16 @@ cd amigo-secreto
 ## 📁 Estrutura do projeto
 
 ```
+├── assets
+|    ├── amigo-secreto-thumbnail.png
+|    ├── amigo-secreto.png
+|    ├── output1080_plus.gif
+|    └── play_circle_outline.png
+├── .gitignore
+├── app.js
 ├── index.html
-├── style.css
-└── script.js
+├── README.md
+└── style.css
 ```
 
 ## 📧 Contato
