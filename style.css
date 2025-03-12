@@ -6,6 +6,8 @@
     --color-button-hover: #e55720;
     --color-text: #444444;
     --color-white: #FFFFFF;
+    --color-atention: #FF0000;
+    --color-atention-hover: #870000;
 }
 
 /* Estilos gerais */
@@ -13,6 +15,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 body {
@@ -88,8 +96,10 @@ body {
 }
 
 .button-container {
+    display: flex;
     width: 300px;
     justify-content: center;
+    gap: 10px;
 }
 
 /* Estilos de entrada de texto */
@@ -146,11 +156,12 @@ ul {
 .button-draw {
     display: flex;
     align-items: center;
-    width: 100%;
+    flex: 7;
     padding: 10px 40px;
     color: var(--color-white);
     background-color: var(--color-button);
     font-size: 16px;
+    cursor: pointer;
 }
 
 .button-draw img {
@@ -159,4 +170,82 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+.button-draw:disabled {
+    background-color: #d3d3d3; /* Cor pálida */
+    opacity: 0.5;            /* Menor opacidade */
+    cursor: not-allowed;     /* Indica que não pode ser clicado */
+}
+
+.button-draw:disabled img {
+    filter: grayscale(100%); /* Torna a imagem cinza */
+}
+
+/* Botão de limpar lista de amigos */
+.button-clear {
+    display: flex;
+    align-items: center;
+    flex: 3;
+    padding: 10px 20px;
+    color: var(--color-white);
+    background-color: var(--color-button);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button-clear img {
+    margin-right: 20px;
+}
+
+.button-clear:hover {
+    background-color: var(--color-atention-hover);
+}
+
+.button-clear:hover .blink-text {
+    animation: blink 1s infinite;
+}
+
+.button-remove {
+    font-size: 0.8rem;      /* Tamanho menor para o texto */
+    padding: 2px 5px;       /* Menor padding */
+    margin-left: 10px;      /* Espaço entre o nome e o botão */
+    border: none;           /* Remove a borda padrão */
+    background-color: transparent; /* Fundo transparente (ou defina uma cor que desejar) */
+    color: var(--color-button);    /* Ou defina outra cor */
+    cursor: pointer;
+}
+
+.button-remove:hover {
+    background-color: var(--color-atention-hover);
+    color: var(--color-white);
+}
+
+.button-remove:hover .blink-text-remover {
+    animation: blink 1s infinite;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 36px;
+    }
+    .section-title {
+        font-size: 24px;
+    }
+    .input-title {
+        font-size: 14px;
+    }
+    button {
+        font-size: 14px
+        padding: 10px 15px;
+        .button-add {
+        padding: 10px 15px;
+    }
+    .button-draw {
+        padding: 10px 20px;
+    }
+    .button-clear {
+        padding: 10px 20px;
+    }
 }
