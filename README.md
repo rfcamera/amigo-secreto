@@ -1,4 +1,4 @@
-![Meu repositório no GitHub é https://github.com/rfcamera](.assets/amigo-secreto-thumbnail.png)
+![Meu repositório no GitHub é https://github.com/rfcamera](./assets/amigo-secreto-thumbnail.png)
 
 # Amigo Secreto
 
@@ -41,7 +41,7 @@ Amigo Secreto é uma aplicação web que permite aos usuários inserir nomes de 
 
 *Exemplo visual do funcionamento do Amigo Secreto:*
 
-![Funcionamento do Amigo Secreto](.assets/output1080_plus.gif)
+![Funcionamento do Amigo Secreto](./assets/output1080_plus.gif)
 
 ## ✔️ Técnicas e tecnologias utilizadas
 
